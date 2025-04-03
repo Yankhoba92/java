@@ -13,10 +13,10 @@ public class Country {
             @Column(name = "country_id")
     private Integer id;
 
-    @Column(name = "country")
+    @Column( name = "country")
     private String name;
 
-    @OneToMany(mappedBy="country")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy="country")
     private List<City> cities;
 
     @Column(name="last_update")
