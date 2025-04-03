@@ -25,10 +25,10 @@ public class CountryController {
 
     }
 
-    @GetMapping("/get/{id}")
+    @GetMapping("/get/{country_id}")
         @Transactional
-    public Country getCountryById(@PathVariable("id") int id){
-        return countryService.read(id);
+    public Country getCountryById(@PathVariable() int country_id){
+        return countryService.read(country_id);
     }
 
 
