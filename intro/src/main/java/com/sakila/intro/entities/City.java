@@ -1,5 +1,6 @@
 package com.sakila.intro.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
@@ -16,6 +17,7 @@ public class City {
 
     @ManyToOne
         @JoinColumn(name = "country_id")
+            @JsonIgnore
     private Country country;
 
     @Column(name="last_update")
