@@ -24,10 +24,10 @@ class CityServiceImplTest {
     @Test
     @DisplayName("Search By Name")
     void searchByName() {
-        log.info("<<<<<<<<<START searchByName >>>>>>>>>");
+        log.info("--------------------<<START searchByName -------------------->>");
         readLike("Pa");
         readLike("Xi");
-        log.info("<<<<<<<<<END   searchByName >>>>>>>>>");
+        log.info("--------------------<<END   searchByName -------------------->>");
     }
 
     private void readLike(String str) {
@@ -38,20 +38,20 @@ class CityServiceImplTest {
 
     @Test
     void read() {
-        log.info("<<<<<<<read by Id START>>>>>>>");
+        log.info("--------------------read by Id START--------------------");
         var city = cityService.read(59);
         log.trace("{}", city);
-        log.info("<<<<<<<read by Id END >>>>>>>");
+        log.info("--------------------read by Id END --------------------");
     }
 
     @Test
     void readAll() {
-        log.info("<<<<<<<readAll START>>>>>>>");
+        log.info("--------------------readAll START--------------------");
         var cities = cityService.readAll();
         cities.forEach(c->log.trace("{}", c));
         log.info("Nbre de cities : {}"
                 , cities.size() );
         assertEquals(600, cities.size(),0,"Nbre de cities ERRONE : " + cities.size());
-        log.info("<<<<<<<readAll END>>>>>>>");
+        log.info("--------------------readAll END--------------------");
     }
 }

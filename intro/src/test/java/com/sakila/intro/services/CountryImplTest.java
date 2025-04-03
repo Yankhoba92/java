@@ -20,7 +20,7 @@ class CountryImplTest {
 
     @BeforeEach
     void setUp() {
-        log.info("<<<<<<Check Service Injection>>>>>>");
+        log.info("--------------------Check Service Injection--------------------");
         assertNotNull(service,"Service Country NOT Injected !!");
         log.info("Service Injection Ok : {}\n", (service != null));
     }
@@ -28,7 +28,7 @@ class CountryImplTest {
     @Test
         @Transactional
     void read(){
-        log.info("<<<<<<<read START>>>>>>>");
+        log.info("--------------------<read START--------------------");
         var countryId = 23;
         var country = service.read(countryId);
         log.trace("{}", country);
@@ -38,14 +38,14 @@ class CountryImplTest {
         }
         log.info("=========================");
         log.info("Nbre total cities : {}", cities.size());
-        log.info("<<<<<<read   STOP >>>>>>");
+        log.info("--------------------read   STOP --------------------");
     }
     @Test
     void readAll() {
-        log.info("<<<<<<readAll START>>>>>>");
+        log.info("--------------------readAll START--------------------");
         var countries = service.readAll();
         countries.forEach(c->log.trace("{}",c));
         log.info("Nbre de pays : {}",countries.size()   );
-        log.info("<<<<<<readAll STOP >>>>>>");
+        log.info("--------------------readAll STOP --------------------");
     }
 }
